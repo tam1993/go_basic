@@ -1,0 +1,18 @@
+การใช้ Go module
+go.mod list dependency ทั้งหมดของ go ไว้
+go.sum คือไฟล์ที่เก็บเวอร์ชั่นที่ลงเอาไว้ (ใข้เช็คได้ว่าเรา load มาถูก version แล้วหรือไม่)
+
+การสร้าง go module
+go mod init moduleName
+
+การดาวน์โหลด package มาใช้
+go get XXXX
+
+list package ที่ลงทั้งหมด
+go list -m all
+
+สร้าง package เอง
+-สร้าง folder ชื่อตาม package ที่จะใช้จะมีชื่อได้แค่ package เดียวใน folder นั้นๆ
+-ขึ้นต้นตัวเล็กจะเป็น private ขึ้นต้นตัวใหญ่จะเป็น public
+-มีหลายไฟล์ได้แต่ต้องชื่อ package เดียวกัน
+-import เข้า main ชื่อ folder ตามด้วย /ชื่อpackage
