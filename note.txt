@@ -7,6 +7,7 @@ go mod init moduleName
 
 การดาวน์โหลด package มาใช้
 go get XXXX
+go get -u github.com/gin-gonic/gin
 
 list package ที่ลงทั้งหมด
 go list -m all
@@ -16,3 +17,11 @@ go list -m all
 -ขึ้นต้นตัวเล็กจะเป็น private ขึ้นต้นตัวใหญ่จะเป็น public
 -มีหลายไฟล์ได้แต่ต้องชื่อ package เดียวกัน
 -import เข้า main ชื่อ folder ตามด้วย /ชื่อpackage
+
+Build ไป Run บน Windows ได้ด้วยคำสั่ง
+    - env GOOS=windows GOARCH=amd64 go build
+    - env GOOS=windows GOARCH=amd64 CGO_ENABLED=1 go build
+    GOOS คือ เลือกระบบปฏิบัติการที่จะ Build
+    GOARCH คือ สถาปัตยกรรมของ CPU ที่จะ Build
+
+    - go build -o print-server.exe
